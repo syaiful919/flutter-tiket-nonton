@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "736848518802",
+    "firebase_url": "https://bwa-flutix-e04dc.firebaseio.com",
+    "project_id": "bwa-flutix-e04dc",
+    "storage_bucket": "bwa-flutix-e04dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736848518802:android:aa3fdfc711aef88997d04b",
+        "android_client_info": {
+          "package_name": "com.example.tiket_nonton"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736848518802-ei3p6rs5n4tm6rkeb1j4egn6e468buvs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZVCcSXmVDrypcnLlv0hh7bPGmh-HkUpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "736848518802-ei3p6rs5n4tm6rkeb1j4egn6e468buvs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
