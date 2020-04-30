@@ -4,17 +4,59 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Splash Page"),
-      ),
-      body: Center(
-        child: RaisedButton(
-          child: Text("Go to Sign In Page"),
-          onPressed: () {
-            context.bloc<PageBloc>().add(GoToSignInPage());
-          },
-        ),
-      ),
+      backgroundColor: Colors.white,
+      body: Container(
+          padding: EdgeInsets.symmetric(horizontal: defaultMargin),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                height: 136,
+                decoration: BoxDecoration(
+                    image:
+                        DecorationImage(image: AssetImage("assets/logo.png"))),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 70, bottom: 16),
+                child: Text(
+                  "New Experience",
+                  style: blackText.copyWith(fontSize: 20),
+                ),
+              ),
+              Text(
+                "Watch a new movie much\n easier than any before",
+                style: greyText.copyWith(
+                    fontSize: 16, fontWeight: FontWeight.w300),
+                textAlign: TextAlign.center,
+              ),
+              Container(
+                width: 250,
+                height: 46,
+                margin: EdgeInsets.only(top: 70, bottom: 19),
+                child: RaisedButton(
+                  child: Text(
+                    "Get Started",
+                    style: whiteText.copyWith(fontSize: 16),
+                  ),
+                  color: mainColor,
+                  onPressed: () {},
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "Already have an account? ",
+                    style: greyText.copyWith(fontWeight: FontWeight.w400),
+                  ),
+                  GestureDetector(
+                    onTap: () => context.bloc<PageBloc>().add(GoToSignInPage()),
+                    child: Text("Sign In", style: purpleText),
+                  )
+                ],
+              )
+            ],
+          )),
     );
   }
 }
