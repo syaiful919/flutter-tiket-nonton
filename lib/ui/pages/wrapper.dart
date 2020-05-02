@@ -21,6 +21,10 @@ class Wrapper extends StatelessWidget {
     return BlocBuilder<PageBloc, PageState>(
         builder: (_, pageState) => (pageState is OnSplashPage)
             ? SplashPage()
-            : (pageState is OnSignInPage) ? SignInPage() : MainPage());
+            : (pageState is OnSignInPage)
+                ? SignInPage()
+                : (pageState is OnSignUpPage)
+                    ? SignUpPage(registrationData: pageState.registrationData)
+                    : MainPage());
   }
 }

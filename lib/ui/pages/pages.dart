@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:ui';
 
 import 'package:email_validator/email_validator.dart';
@@ -6,9 +7,11 @@ import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:tiket_nonton/models/models.dart';
 import 'package:tiket_nonton/services/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tiket_nonton/blocs/blocs.dart';
@@ -20,3 +23,11 @@ part 'wrapper.dart';
 part 'main_page.dart';
 part 'splash.dart';
 part 'movie.dart';
+part 'account_confirmation.dart';
+part 'preferences.dart';
+part 'sign_up.dart';
+
+Future<File> getImage() async{
+  var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+  return image;
+}
