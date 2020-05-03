@@ -27,14 +27,16 @@ class _MainPageState extends State<MainPage> {
             color: Color(0xFFF6F7F9),
           ),
         ),
-        PageView(
-          controller: pageController,
-          onPageChanged: (index) {
-            setState(() {
-              bottomNavBarIndex = index;
-            });
-          },
-          children: <Widget>[MoviePage(), Center(child: Text("My Tickets"))],
+        SafeArea(
+          child: PageView(
+            controller: pageController,
+            onPageChanged: (index) {
+              setState(() {
+                bottomNavBarIndex = index;
+              });
+            },
+            children: <Widget>[MoviePage(), Center(child: Text("My Tickets"))],
+          ),
         ),
         buildCustomBottomNavBar(),
         Align(
