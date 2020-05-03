@@ -18,8 +18,16 @@ class PreferencesPage extends StatefulWidget {
 }
 
 class _PreferencesPageState extends State<PreferencesPage> {
-  List<String> selectedGenres = [];
-  String selectedLang = "English";
+  List<String> selectedGenres;
+  String selectedLang;
+
+  @override
+  void initState() { 
+    super.initState();
+    selectedGenres = widget.registrationData.selectedGenres ?? [];
+    selectedLang = widget.registrationData.selectedLang;
+
+  }
 
   @override
   Widget build(BuildContext context) {

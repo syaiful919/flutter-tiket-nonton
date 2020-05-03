@@ -13,7 +13,7 @@ class RegistrationData{
       this.name = '',
       this.email = '',
       this.password = '',
-      this.selectedGenres = const [],
+      this.selectedGenres,
       this.selectedLang = '',
       this.profileImage
     }

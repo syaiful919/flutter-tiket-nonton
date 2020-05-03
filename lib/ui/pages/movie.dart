@@ -14,6 +14,12 @@ class MoviePage extends StatelessWidget {
         child: BlocBuilder<UserBloc, UserState>(
           builder: (_, userState) {
             if (userState is UserLoaded) {
+              if (imageFileToUpload != null) {
+                uploadImage(imageFileToUpload).then((value) {
+                  imageFileToUpload = null;
+                  context.bloc<UserBloc>().add(UpdateData(profileImage: value));
+                });
+              }
               return Row(
                 children: <Widget>[
                   Container(
@@ -56,7 +62,10 @@ class MoviePage extends StatelessWidget {
                             overflow: TextOverflow.clip,
                           )),
                       Text(
-                        NumberFormat.currency(locale: "id_ID", decimalDigits: 0, symbol: "IDR ")
+                        NumberFormat.currency(
+                                locale: "id_ID",
+                                decimalDigits: 0,
+                                symbol: "IDR ")
                             .format(userState.user.balance),
                         style: yellowNumber.copyWith(
                             fontSize: 14, fontWeight: FontWeight.w400),
