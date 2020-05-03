@@ -14,7 +14,7 @@ class RegistrationData{
       this.email = '',
       this.password = '',
       this.selectedGenres,
-      this.selectedLang = '',
+      this.selectedLang = 'English',
       this.profileImage
     }
   );

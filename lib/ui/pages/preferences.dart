@@ -22,11 +22,10 @@ class _PreferencesPageState extends State<PreferencesPage> {
   String selectedLang;
 
   @override
-  void initState() { 
+  void initState() {
     super.initState();
     selectedGenres = widget.registrationData.selectedGenres ?? [];
     selectedLang = widget.registrationData.selectedLang;
-
   }
 
   @override
@@ -34,6 +33,7 @@ class _PreferencesPageState extends State<PreferencesPage> {
     return WillPopScope(
       onWillPop: () async {
         widget.registrationData.password = '';
+        widget.registrationData.selectedGenres = null;
         context.bloc<PageBloc>().add(GoToSignUpPage(widget.registrationData));
         return;
       },
@@ -52,6 +52,7 @@ class _PreferencesPageState extends State<PreferencesPage> {
                       child: GestureDetector(
                         onTap: () {
                           widget.registrationData.password = '';
+                          widget.registrationData.selectedGenres = null;
                           context
                               .bloc<PageBloc>()
                               .add(GoToSignUpPage(widget.registrationData));
