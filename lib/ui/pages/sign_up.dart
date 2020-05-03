@@ -130,6 +130,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 SizedBox(height: 16),
                 TextField(
                   controller: passwordController,
+                  obscureText: true,
                   decoration: InputDecoration(
                     labelText: "Password",
                     hintText: "Password",
@@ -140,6 +141,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 SizedBox(height: 16),
                 TextField(
                   controller: confirmPasswordController,
+                  obscureText: true,
                   decoration: InputDecoration(
                     labelText: "Confirm Password",
                     hintText: "Confirm Password",
@@ -190,9 +192,9 @@ class _SignUpPageState extends State<SignUpPage> {
                         widget.registrationData.email = emailController.text;
                         widget.registrationData.password =
                             passwordController.text;
-                            context
-                              .bloc<PageBloc>()
-                              .add(GoToPreferencesPage(widget.registrationData));
+                        context
+                            .bloc<PageBloc>()
+                            .add(GoToPreferencesPage(widget.registrationData));
                       }
                     },
                     child: Icon(
