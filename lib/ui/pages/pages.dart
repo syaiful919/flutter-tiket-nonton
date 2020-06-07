@@ -16,6 +16,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tiket_nonton/blocs/blocs.dart';
 import 'package:tiket_nonton/shared/shared.dart';
 import 'package:tiket_nonton/ui/widgets/widgets.dart';
+import 'package:tiket_nonton/extensions/extensions.dart';
 
 part 'sign_in.dart';
 part 'wrapper.dart';
@@ -28,5 +29,4 @@ part 'sign_up.dart';
 part 'movie_detail.dart';
 part 'select_schedule_page.dart';
 part 'select_seat_page.dart';
-
-
+part 'checkout_page.dart';
