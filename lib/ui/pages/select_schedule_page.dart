@@ -115,7 +115,21 @@ class _SelectSchedulePageState extends State<SelectSchedulePage> {
                             color: isValid ? Colors.white : Color(0xFFBEBEBE),
                           ),
                           onPressed: () {
-                            if (isValid) {}
+                            if (isValid) {
+                              context.bloc<PageBloc>().add(GoToSelectSeatPage(
+                                  Ticket(
+                                      widget.movieDetail,
+                                      selectedTheater,
+                                      DateTime(
+                                          selectedDate.year,
+                                          selectedDate.month,
+                                          selectedDate.day,
+                                          selectedTime),
+                                      randomAlphaNumeric(12).toUpperCase(),
+                                      null,
+                                      (userState as UserLoaded).user.name,
+                                      null)));
+                            }
                           }),
                     )),
                 SizedBox(
