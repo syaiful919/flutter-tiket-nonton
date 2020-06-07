@@ -24,4 +24,5 @@ part 'movie.dart';
 part 'account_confirmation.dart';
 part 'preferences.dart';
 part 'sign_up.dart';
+part 'movie_detail.dart';
 
