@@ -57,7 +57,7 @@ class _MainPageState extends State<MainPage> {
             margin: EdgeInsets.only(bottom: 42),
             child: FloatingActionButton(
               elevation: 0,
-              backgroundColor: accentColor2,
+              backgroundColor: Color(0xFFFBD460),
               child: SizedBox(
                 height: 26,
                 width: 26,
@@ -90,7 +90,7 @@ class _MainPageState extends State<MainPage> {
             child: BottomNavigationBar(
               elevation: 0,
               backgroundColor: Colors.transparent,
-              selectedItemColor: mainColor,
+              selectedItemColor: secondaryColor,
               unselectedItemColor: Color(0xFFE5E5E5),
               currentIndex: bottomNavBarIndex,
               onTap: (index) {

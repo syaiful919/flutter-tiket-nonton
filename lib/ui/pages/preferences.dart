@@ -82,7 +82,7 @@ class _PreferencesPageState extends State<PreferencesPage> {
                   Center(
                       child: FloatingActionButton(
                     elevation: 0,
-                    backgroundColor: mainColor,
+                    backgroundColor: secondaryColor,
                     child: Icon(Icons.arrow_forward),
                     onPressed: () {
                       if (selectedGenres.length != 4) {

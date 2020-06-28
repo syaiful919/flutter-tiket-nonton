@@ -57,7 +57,7 @@ class WalletPage extends StatelessWidget {
                                 margin: EdgeInsets.symmetric(vertical: 20),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(15),
-                                    color: Color(0xFF382A74),
+                                    color: mainColor,
                                     boxShadow: [
                                       BoxShadow(
                                           color: Colors.black26,

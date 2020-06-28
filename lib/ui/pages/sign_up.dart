@@ -24,8 +24,9 @@ class _SignUpPageState extends State<SignUpPage> {
 
   @override
   Widget build(BuildContext context) {
-    context.bloc<ThemeBloc>().add(
-        ChangeTheme(ThemeData().copyWith(primaryColor: mainColor)));
+    context
+        .bloc<ThemeBloc>()
+        .add(ChangeTheme(ThemeData().copyWith(primaryColor: mainColor)));
     return WillPopScope(
       onWillPop: () async {
         context.bloc<PageBloc>().add(GoToSplashPage());
@@ -152,7 +153,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 SizedBox(height: 30),
                 FloatingActionButton(
                     elevation: 0,
-                    backgroundColor: mainColor,
+                    backgroundColor: secondaryColor,
                     onPressed: () {
                       if (!(nameController.text.trim() != "" &&
                           emailController.text.trim() != "" &&

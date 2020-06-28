@@ -259,11 +259,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                   children: <Widget>[
                                     Container(
                                       margin: EdgeInsets.fromLTRB(5, 3, 9, 3),
-                                      color: accentColor2,
+                                      color: Color(0xFFFBD460),
                                     ),
                                     Icon(
                                       MdiIcons.logout,
-                                      color: mainColor,
+                                      color: secondaryColor,
                                       size: 24,
                                     ),
                                   ],

@@ -84,7 +84,7 @@ class _TicketPageState extends State<TicketPage> {
                                   fontSize: 16,
                                   color: !isExpiredTickets
                                       ? Colors.white
-                                      : Color(0xFF6F678E)),
+                                      : Colors.grey),
                             ),
                           ),
                           SizedBox(
@@ -113,7 +113,7 @@ class _TicketPageState extends State<TicketPage> {
                                   fontSize: 16,
                                   color: isExpiredTickets
                                       ? Colors.white
-                                      : Color(0xFF6F678E)),
+                                      : Colors.grey),
                             ),
                           ),
                           SizedBox(
