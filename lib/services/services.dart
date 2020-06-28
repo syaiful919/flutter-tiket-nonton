@@ -12,4 +12,4 @@ part 'auth_services.dart';
 part 'user_services.dart';
 part 'movie_services.dart';
 part 'ticket_services.dart';
-part 'transaction_services.dart';
+part 'app_transaction_services.dart';
