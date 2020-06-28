@@ -16,7 +16,7 @@ class User extends Equatable {
       this.selectedLanguage,
       this.balance});
 
-  User copyWth({String name, String profilePicture, int balance}) => User(
+  User copyWith({String name, String profilePicture, int balance}) => User(
         this.id,
         this.email,
         name: name ?? this.name,
