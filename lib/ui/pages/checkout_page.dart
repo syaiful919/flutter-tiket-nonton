@@ -371,6 +371,23 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                     ),
                                     onPressed: () {
                                       if (user.balance >= total) {
+                                        AppTransaction transaction =
+                                            AppTransaction(
+                                                userID: user.id,
+                                                title: widget
+                                                    .ticket.movieDetail.title,
+                                                subtitle:
+                                                    widget.ticket.theater.name,
+                                                time: DateTime.now(),
+                                                amount: -total,
+                                                picture: widget.ticket
+                                                    .movieDetail.posterPath);
+
+                                        context.bloc<PageBloc>().add(
+                                            GoToSuccessPage(
+                                                widget.ticket.copyWith(
+                                                    totalPrice: total),
+                                                transaction));
                                       } else {}
                                     }),
                               )
