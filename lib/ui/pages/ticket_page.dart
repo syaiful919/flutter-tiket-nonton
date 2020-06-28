@@ -49,7 +49,7 @@ class _TicketPageState extends State<TicketPage> {
           ),
           // note: HEADER
           Container(
-            height: 113,
+            height: 90,
             color: accentColor1,
           ),
           SafeArea(
