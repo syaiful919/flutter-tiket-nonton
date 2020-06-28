@@ -17,7 +17,7 @@ class _MainPageState extends State<MainPage> {
   @override
   void initState() {
     super.initState();
-    bottomNavBarIndex = 0;
+    bottomNavBarIndex = widget.bottomNavBarIndex;
     pageController = PageController(initialPage: bottomNavBarIndex);
   }
 
@@ -40,7 +40,12 @@ class _MainPageState extends State<MainPage> {
                 bottomNavBarIndex = index;
               });
             },
-            children: <Widget>[MoviePage(), Center(child: Text("My Tickets"))],
+            children: <Widget>[
+              MoviePage(),
+              TicketPage(
+                isExpiredTicket: widget.isExpired,
+              ),
+            ],
           ),
         ),
         buildCustomBottomNavBar(),

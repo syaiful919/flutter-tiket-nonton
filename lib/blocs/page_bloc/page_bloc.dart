@@ -20,7 +20,9 @@ class PageBloc extends Bloc<PageEvent, PageState> {
     } else if (event is GoToSignInPage) {
       yield OnSignInPage();
     } else if (event is GoToMainPage) {
-      yield OnMainPage();
+      yield OnMainPage(
+          bottomNavBarIndex: event.bottomNavBarIndex,
+          isExpired: event.isExpired);
     } else if (event is GoToSignUpPage) {
       yield OnSignUpPage(event.registrationData);
     } else if (event is GoToPreferencesPage) {
