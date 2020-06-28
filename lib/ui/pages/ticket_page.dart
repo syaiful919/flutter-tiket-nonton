@@ -25,19 +25,28 @@ class _TicketPageState extends State<TicketPage> {
       body: Stack(
         children: <Widget>[
           // note: CONTENT
-          BlocBuilder<TicketBloc, TicketState>(
-              builder: (_, ticketState) => Container(
-                    margin: EdgeInsets.symmetric(horizontal: defaultMargin),
-                    child: TicketViewer(isExpiredTickets
-                        ? ticketState.tickets
-                            .where((ticket) =>
-                                ticket.time.isBefore(DateTime.now()))
-                            .toList()
-                        : ticketState.tickets
-                            .where((ticket) =>
-                                !ticket.time.isBefore(DateTime.now()))
-                            .toList()),
-                  )),
+          SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                BlocBuilder<TicketBloc, TicketState>(
+                    builder: (_, ticketState) => Container(
+                          margin:
+                              EdgeInsets.symmetric(horizontal: defaultMargin),
+                          child: TicketViewer(isExpiredTickets
+                              ? ticketState.tickets
+                                  .where((ticket) =>
+                                      ticket.time.isBefore(DateTime.now()))
+                                  .toList()
+                              : ticketState.tickets
+                                  .where((ticket) =>
+                                      !ticket.time.isBefore(DateTime.now()))
+                                  .toList()),
+                        )),
+                SizedBox(height: 100),
+              ],
+            ),
+          ),
           // note: HEADER
           Container(
             height: 113,
@@ -164,6 +173,8 @@ class TicketViewer extends StatelessWidget {
         .sort((ticket1, ticket2) => ticket1.time.compareTo(ticket2.time));
 
     return ListView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
         itemCount: sortedTickets.length,
         itemBuilder: (_, index) => GestureDetector(
               onTap: () {
