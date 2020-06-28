@@ -73,18 +73,29 @@ class _SignInPageState extends State<SignInPage> {
                                 borderRadius: BorderRadius.circular(10))),
                       ),
                       SizedBox(height: 6),
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            "Forgot Password? ",
-                            style: greyText.copyWith(
-                                fontSize: 12, fontWeight: FontWeight.w400),
-                          ),
-                          Text(
-                            "Get Now",
-                            style: purpleText.copyWith(fontSize: 12),
-                          ),
-                        ],
+                      GestureDetector(
+                        onTap: () {
+                          Flushbar(
+                            duration: Duration(milliseconds: 3500),
+                            flushbarPosition: FlushbarPosition.TOP,
+                            backgroundColor: Color(0xFFFF5C83),
+                            message:
+                                "Sorry, this feature isn't available right now",
+                          )..show(context);
+                        },
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              "Forgot Password? ",
+                              style: greyText.copyWith(
+                                  fontSize: 12, fontWeight: FontWeight.w400),
+                            ),
+                            Text(
+                              "Get Now",
+                              style: purpleText.copyWith(fontSize: 12),
+                            ),
+                          ],
+                        ),
                       ),
                       Center(
                         child: Container(
@@ -132,18 +143,25 @@ class _SignInPageState extends State<SignInPage> {
                                         : null,
                                   )),
                       ),
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            "Start Fresh Now? ",
-                            style:
-                                greyText.copyWith(fontWeight: FontWeight.w400),
-                          ),
-                          Text(
-                            "Sign Up",
-                            style: purpleText,
-                          )
-                        ],
+                      GestureDetector(
+                        onTap: () {
+                          context
+                              .bloc<PageBloc>()
+                              .add(GoToSignUpPage(RegistrationData()));
+                        },
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              "Start Fresh Now? ",
+                              style: greyText.copyWith(
+                                  fontWeight: FontWeight.w400),
+                            ),
+                            Text(
+                              "Sign Up",
+                              style: purpleText,
+                            )
+                          ],
+                        ),
                       )
                     ],
                   )

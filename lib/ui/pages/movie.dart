@@ -99,7 +99,7 @@ class MoviePage extends StatelessWidget {
         child: BlocBuilder<MovieBloc, MovieState>(
           builder: (_, movieState) {
             if (movieState is MovieLoaded) {
-              List<Movie> movies = movieState.movies.sublist(0, 5);
+              List<Movie> movies = movieState.movies.sublist(0, 9);
               return ListView.builder(
                   itemCount: movies.length,
                   scrollDirection: Axis.horizontal,

@@ -149,20 +149,31 @@ class _ProfilePageState extends State<ProfilePage> {
                             MediaQuery.of(context).size.width -
                                 2 * defaultMargin),
                       ),
-                      Row(
-                        children: <Widget>[
-                          SizedBox(
-                              width: 24,
-                              height: 24,
-                              child: Image.asset("assets/language.png")),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "Change Language",
-                            style: blackText.copyWith(fontSize: 16),
-                          )
-                        ],
+                      GestureDetector(
+                        onTap: () {
+                          Flushbar(
+                            duration: Duration(milliseconds: 3500),
+                            flushbarPosition: FlushbarPosition.TOP,
+                            backgroundColor: Color(0xFFFF5C83),
+                            message:
+                                "Sorry, this feature isn't available right now",
+                          )..show(context);
+                        },
+                        child: Row(
+                          children: <Widget>[
+                            SizedBox(
+                                width: 24,
+                                height: 24,
+                                child: Image.asset("assets/language.png")),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Change Language",
+                              style: blackText.copyWith(fontSize: 16),
+                            )
+                          ],
+                        ),
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 10, bottom: 16),
@@ -170,20 +181,31 @@ class _ProfilePageState extends State<ProfilePage> {
                             MediaQuery.of(context).size.width -
                                 2 * defaultMargin),
                       ),
-                      Row(
-                        children: <Widget>[
-                          SizedBox(
-                              width: 24,
-                              height: 24,
-                              child: Image.asset("assets/help_centre.png")),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "Help Centre",
-                            style: blackText.copyWith(fontSize: 16),
-                          )
-                        ],
+                      GestureDetector(
+                        onTap: () {
+                          Flushbar(
+                            duration: Duration(milliseconds: 3500),
+                            flushbarPosition: FlushbarPosition.TOP,
+                            backgroundColor: Color(0xFFFF5C83),
+                            message:
+                                "Sorry, this feature isn't available right now",
+                          )..show(context);
+                        },
+                        child: Row(
+                          children: <Widget>[
+                            SizedBox(
+                                width: 24,
+                                height: 24,
+                                child: Image.asset("assets/help_centre.png")),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Help Centre",
+                              style: blackText.copyWith(fontSize: 16),
+                            )
+                          ],
+                        ),
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 10, bottom: 16),
@@ -191,20 +213,31 @@ class _ProfilePageState extends State<ProfilePage> {
                             MediaQuery.of(context).size.width -
                                 2 * defaultMargin),
                       ),
-                      Row(
-                        children: <Widget>[
-                          SizedBox(
-                              width: 24,
-                              height: 24,
-                              child: Image.asset("assets/rate.png")),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Text(
-                            "Rate Flutix App",
-                            style: blackText.copyWith(fontSize: 16),
-                          )
-                        ],
+                      GestureDetector(
+                        onTap: () {
+                          Flushbar(
+                            duration: Duration(milliseconds: 3500),
+                            flushbarPosition: FlushbarPosition.TOP,
+                            backgroundColor: Color(0xFFFF5C83),
+                            message:
+                                "Sorry, Tiket Nonton isn't available at playstore right now",
+                          )..show(context);
+                        },
+                        child: Row(
+                          children: <Widget>[
+                            SizedBox(
+                                width: 24,
+                                height: 24,
+                                child: Image.asset("assets/rate.png")),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Rate Tiket Nonton App",
+                              style: blackText.copyWith(fontSize: 16),
+                            )
+                          ],
+                        ),
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 10, bottom: 16),
