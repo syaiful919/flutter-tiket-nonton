@@ -57,13 +57,13 @@ class _MainPageState extends State<MainPage> {
             margin: EdgeInsets.only(bottom: 42),
             child: FloatingActionButton(
               elevation: 0,
-              backgroundColor: Color(0xFFFBD460),
+              backgroundColor: accentColor2,
               child: SizedBox(
                 height: 26,
                 width: 26,
                 child: Icon(
                   MdiIcons.walletPlus,
-                  color: Colors.black.withOpacity(0.54),
+                  color: Colors.black.withOpacity(0.6),
                 ),
               ),
               onPressed: () =>
@@ -90,7 +90,7 @@ class _MainPageState extends State<MainPage> {
             child: BottomNavigationBar(
               elevation: 0,
               backgroundColor: Colors.transparent,
-              selectedItemColor: secondaryColor,
+              selectedItemColor: mainColor,
               unselectedItemColor: Color(0xFFE5E5E5),
               currentIndex: bottomNavBarIndex,
               onTap: (index) {
@@ -105,7 +105,7 @@ class _MainPageState extends State<MainPage> {
                       margin: EdgeInsets.only(bottom: 6),
                       height: 20,
                       child: Image.asset((bottomNavBarIndex == 0)
-                          ? "assets/ic_movie.png"
+                          ? "assets/ic_movies.png"
                           : "assets/ic_movie_grey.png"),
                     ),
                     title: Text("New movies",

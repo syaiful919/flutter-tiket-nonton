@@ -119,24 +119,36 @@ class _SignInPageState extends State<SignInPage> {
                                             setState(() {
                                               isSigninIn = true;
                                             });
+                                            try {
+                                              SignInSignUpResult result =
+                                                  await AuthServices.signIn(
+                                                      emailController.text,
+                                                      passwordController.text);
 
-                                            SignInSignUpResult result =
-                                                await AuthServices.signIn(
-                                                    emailController.text,
-                                                    passwordController.text);
+                                              if (result.user == null) {
+                                                setState(() {
+                                                  isSigninIn = false;
+                                                });
 
-                                            if (result.user == null) {
-                                              setState(() {
-                                                isSigninIn = false;
-                                              });
-
+                                                if (result.message != null)
+                                                  Flushbar(
+                                                    duration:
+                                                        Duration(seconds: 4),
+                                                    flushbarPosition:
+                                                        FlushbarPosition.TOP,
+                                                    backgroundColor:
+                                                        Color(0xFFFF5C83),
+                                                    message: result.message,
+                                                  )..show(context);
+                                              }
+                                            } catch (e) {
                                               Flushbar(
                                                 duration: Duration(seconds: 4),
                                                 flushbarPosition:
                                                     FlushbarPosition.TOP,
                                                 backgroundColor:
                                                     Color(0xFFFF5C83),
-                                                message: result.message,
+                                                message: "$e",
                                               )..show(context);
                                             }
                                           }
