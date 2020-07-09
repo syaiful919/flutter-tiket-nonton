@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:tiket_nonton/enums/connectivity_status.dart';
 import 'package:tiket_nonton/models/models.dart';
 import 'package:tiket_nonton/shared/shared.dart';
 import 'package:tiket_nonton/extensions/extensions.dart';
@@ -16,3 +18,4 @@ part 'credit_card.dart';
 part 'date_card.dart';
 part 'transaction_card.dart';
 part 'money_card.dart';
+part 'network_sensitive.dart';

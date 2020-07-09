@@ -36,7 +36,11 @@ class AuthServices {
   static Future<void> signOut() async => await _auth.signOut();
 
   static Future<void> resetPassword(String email) async {
-    await _auth.sendPasswordResetEmail(email: email);
+    try {
+      await _auth.sendPasswordResetEmail(email: email);
+    } catch (e) {
+      print(">>> $e");
+    }
   }
 
   static Stream<FirebaseUser> get userStream => _auth.onAuthStateChanged;
