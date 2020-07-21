@@ -3,6 +3,10 @@ part of 'services.dart';
 class AuthServices {
   static FirebaseAuth _auth = FirebaseAuth.instance;
 
+  static Future<FirebaseUser> getFirebaseUser() async {
+    return await _auth.currentUser();
+  }
+
   static Future<SignInSignUpResult> signUp(String email, String password,
       String name, List<String> selectedGenres, String selectedLanguage) async {
     try {
@@ -27,7 +31,7 @@ class AuthServices {
           email: email, password: password);
 
       User user = await result.user.fromFirestore();
-      return SignInSignUpResult(user: user);
+      return SignInSignUpResult(user: user, firebaseUser: result.user);
     } catch (e) {
       return SignInSignUpResult(message: e.toString().split(',')[1].trim());
     }
@@ -48,7 +52,12 @@ class AuthServices {
 
 class SignInSignUpResult {
   final User user;
+  final FirebaseUser firebaseUser;
   final String message;
 
-  SignInSignUpResult({this.user, this.message});
+  SignInSignUpResult({
+    this.user,
+    this.message,
+    this.firebaseUser,
+  });
 }

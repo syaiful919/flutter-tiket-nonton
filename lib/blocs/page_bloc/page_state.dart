@@ -138,3 +138,12 @@ class OnEditProfilePage extends PageState {
   @override
   List<Object> get props => [user];
 }
+
+class OnExploreMoviePage extends PageState {
+  final String genre;
+
+  OnExploreMoviePage(this.genre);
+
+  @override
+  List<Object> get props => [genre];
+}

@@ -23,56 +23,58 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Stack(
-      children: <Widget>[
-        Container(color: accentColor1),
-        SafeArea(
-          child: Container(
-            color: Color(0xFFF6F7F9),
-          ),
-        ),
-        SafeArea(
-          child: PageView(
-            controller: pageController,
-            onPageChanged: (index) {
-              setState(() {
-                bottomNavBarIndex = index;
-              });
-            },
-            children: <Widget>[
-              MoviePage(),
-              TicketPage(
-                isExpiredTicket: widget.isExpired,
-              ),
-            ],
-          ),
-        ),
-        buildCustomBottomNavBar(),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            height: 46,
-            width: 46,
-            margin: EdgeInsets.only(bottom: 42),
-            child: FloatingActionButton(
-              elevation: 0,
-              backgroundColor: accentColor2,
-              child: SizedBox(
-                height: 26,
-                width: 26,
-                child: Icon(
-                  MdiIcons.walletPlus,
-                  color: Colors.black.withOpacity(0.6),
-                ),
-              ),
-              onPressed: () =>
-                  context.bloc<PageBloc>().add(GoToTopUpPage(GoToMainPage())),
+    return NetworkSensitive(
+      child: Scaffold(
+          body: Stack(
+        children: <Widget>[
+          Container(color: accentColor1),
+          SafeArea(
+            child: Container(
+              color: Color(0xFFF6F7F9),
             ),
           ),
-        )
-      ],
-    ));
+          SafeArea(
+            child: PageView(
+              controller: pageController,
+              onPageChanged: (index) {
+                setState(() {
+                  bottomNavBarIndex = index;
+                });
+              },
+              children: <Widget>[
+                MoviePage(),
+                TicketPage(
+                  isExpiredTicket: widget.isExpired,
+                ),
+              ],
+            ),
+          ),
+          buildCustomBottomNavBar(),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              height: 46,
+              width: 46,
+              margin: EdgeInsets.only(bottom: 42),
+              child: FloatingActionButton(
+                elevation: 0,
+                backgroundColor: accentColor2,
+                child: SizedBox(
+                  height: 26,
+                  width: 26,
+                  child: Icon(
+                    MdiIcons.walletPlus,
+                    color: Colors.black.withOpacity(0.6),
+                  ),
+                ),
+                onPressed: () =>
+                    context.bloc<PageBloc>().add(GoToTopUpPage(GoToMainPage())),
+              ),
+            ),
+          )
+        ],
+      )),
+    );
   }
 
   Align buildCustomBottomNavBar() {

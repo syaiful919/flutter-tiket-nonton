@@ -249,6 +249,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         onTap: () async {
                           await AuthServices.signOut();
                           context.bloc<UserBloc>().add(SignOut());
+                          context.bloc<AuthBloc>().add(SignOutAction());
                         },
                         child: Row(
                           children: <Widget>[
