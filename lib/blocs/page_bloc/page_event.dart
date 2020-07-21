@@ -50,11 +50,12 @@ class GoToAccountConfirmationPage extends PageEvent {
 
 class GoToMovieDetailPage extends PageEvent {
   final Movie movie;
+  final bool upcoming;
 
-  GoToMovieDetailPage(this.movie);
+  GoToMovieDetailPage({this.movie, this.upcoming = false});
 
   @override
-  List<Object> get props => [movie];
+  List<Object> get props => [movie, upcoming];
 }
 
 class GoToSelectSchedulePage extends PageEvent {

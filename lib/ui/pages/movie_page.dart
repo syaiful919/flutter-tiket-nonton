@@ -113,7 +113,7 @@ class MoviePage extends StatelessWidget {
                           onTap: () {
                             context
                                 .bloc<PageBloc>()
-                                .add(GoToMovieDetailPage(movies[index]));
+                                .add(GoToMovieDetailPage(movie: movies[index]));
                           },
                         ),
                       ));
@@ -178,7 +178,13 @@ class MoviePage extends StatelessWidget {
                             right: (index == movies.length - 1)
                                 ? defaultMargin
                                 : 16),
-                        child: ComingSoonCard(movie: movies[index]),
+                        child: ComingSoonCard(
+                          movie: movies[index],
+                          onTap: () {
+                            context.bloc<PageBloc>().add(GoToMovieDetailPage(
+                                movie: movies[index], upcoming: true));
+                          },
+                        ),
                       ));
             } else {
               return SpinKitFadingCircle(color: mainColor, size: 50);

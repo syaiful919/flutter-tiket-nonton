@@ -33,7 +33,10 @@ class Wrapper extends StatelessWidget {
                               ? AccountConfimationPage(
                                   registrationData: pageState.registrationData)
                               : (pageState is OnMovieDetailPage)
-                                  ? MovieDetailPage(movie: pageState.movie)
+                                  ? MovieDetailPage(
+                                      movie: pageState.movie,
+                                      upcoming: pageState.upcoming,
+                                    )
                                   : (pageState is OnBrowseMoviePage)
                                       ? BrowseMoviePage(
                                           genreId: pageState.genreId,

@@ -65,10 +65,9 @@ class BrowseMoviePage extends StatelessWidget {
                                                   movie: browseMovieState
                                                       .movies[index],
                                                   onTap: () {
-                                                    context
-                                                        .bloc<PageBloc>()
-                                                        .add(
-                                                            GoToMovieDetailPage(
+                                                    context.bloc<PageBloc>().add(
+                                                        GoToMovieDetailPage(
+                                                            movie:
                                                                 browseMovieState
                                                                         .movies[
                                                                     index]));

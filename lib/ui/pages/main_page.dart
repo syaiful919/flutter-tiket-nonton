@@ -36,6 +36,7 @@ class _MainPageState extends State<MainPage> {
           SafeArea(
             child: PageView(
               controller: pageController,
+              physics: NeverScrollableScrollPhysics(),
               onPageChanged: (index) {
                 setState(() {
                   bottomNavBarIndex = index;

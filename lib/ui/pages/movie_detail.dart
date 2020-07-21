@@ -2,12 +2,19 @@ part of 'pages.dart';
 
 class MovieDetailPage extends StatelessWidget {
   final Movie movie;
+  final bool upcoming;
 
-  const MovieDetailPage({Key key, this.movie}) : super(key: key);
+  const MovieDetailPage({
+    Key key,
+    this.movie,
+    this.upcoming = false,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     MovieDetail movieDetail;
     List<Credit> credits;
+    print(">>> upcoming $upcoming");
     return WillPopScope(
       onWillPop: () async {
         context.bloc<PageBloc>().add(GoToMainPage());
@@ -185,19 +192,20 @@ class MovieDetailPage extends StatelessWidget {
                             ),
                           ),
                           // note: BUTTON
-                          RaisedButton(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8)),
-                              color: mainColor,
-                              child: Text(
-                                "Continue to Book",
-                                style: whiteText.copyWith(fontSize: 16),
-                              ),
-                              onPressed: () {
-                                context
-                                    .bloc<PageBloc>()
-                                    .add(GoToSelectSchedulePage(movieDetail));
-                              }),
+                          if (!upcoming)
+                            RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8)),
+                                color: mainColor,
+                                child: Text(
+                                  "Continue to Book",
+                                  style: whiteText.copyWith(fontSize: 16),
+                                ),
+                                onPressed: () {
+                                  context
+                                      .bloc<PageBloc>()
+                                      .add(GoToSelectSchedulePage(movieDetail));
+                                }),
                           SizedBox(height: defaultMargin)
                         ],
                       );
