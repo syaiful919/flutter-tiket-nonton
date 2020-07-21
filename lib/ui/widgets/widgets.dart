@@ -10,6 +10,7 @@ import 'package:tiket_nonton/extensions/extensions.dart';
 part 'responsive_safe_area.dart';
 part 'selectable_box.dart';
 part 'movie_card.dart';
+part 'browse_movie_card.dart';
 part 'rating_stars.dart';
 part 'browse_button.dart';
 part 'comingsoon_card.dart';

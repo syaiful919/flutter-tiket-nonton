@@ -135,11 +135,12 @@ class GoToEditProfilePage extends PageEvent {
   List<Object> get props => [user];
 }
 
-class GoToExploreMoviePage extends PageEvent {
+class GoToBrowseMoviePage extends PageEvent {
+  final String genreId;
   final String genre;
 
-  GoToExploreMoviePage(this.genre);
+  GoToBrowseMoviePage(this.genreId, this.genre);
 
   @override
-  List<Object> get props => [genre];
+  List<Object> get props => [genreId, genre];
 }

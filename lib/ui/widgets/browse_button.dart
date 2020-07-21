@@ -2,7 +2,7 @@ part of 'widgets.dart';
 
 class BrowseButton extends StatelessWidget {
   final String genre;
-  final VoidCallback onPressed;
+  final Function(String) onPressed;
 
   const BrowseButton({
     Key key,
@@ -13,7 +13,7 @@ class BrowseButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => onPressed(),
+      onTap: () => onPressed(getGenreId(genre)),
       child: Column(
         children: <Widget>[
           Container(
@@ -54,6 +54,31 @@ class BrowseButton extends StatelessWidget {
         break;
       case "Crime":
         return "assets/ic_crime.png";
+        break;
+      default:
+        return "";
+    }
+  }
+
+  String getGenreId(String genre) {
+    switch (genre) {
+      case "Horror":
+        return "27";
+        break;
+      case "Music":
+        return "10402";
+        break;
+      case "Action":
+        return "28";
+        break;
+      case "Drama":
+        return "18";
+        break;
+      case "War":
+        return "10752";
+        break;
+      case "Crime":
+        return "80";
         break;
       default:
         return "";

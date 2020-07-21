@@ -139,11 +139,12 @@ class OnEditProfilePage extends PageState {
   List<Object> get props => [user];
 }
 
-class OnExploreMoviePage extends PageState {
+class OnBrowseMoviePage extends PageState {
+  final String genreId;
   final String genre;
 
-  OnExploreMoviePage(this.genre);
+  OnBrowseMoviePage(this.genreId, this.genre);
 
   @override
-  List<Object> get props => [genre];
+  List<Object> get props => [genreId, genre];
 }

@@ -21,6 +21,30 @@ class MovieServices {
     }
   }
 
+  static Future<List<Movie>> getMoviesByGenre(
+    int page,
+    String genreId, {
+    http.Client client,
+  }) async {
+    String url =
+        'https://api.themoviedb.org/3/discover/movie?api_key=$apiKey&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=$page&with_genres=$genreId';
+    client ??= http.Client();
+    try {
+      var response = await client.get(url);
+      if (response.statusCode != 200) {
+        return [];
+      }
+
+      var data = json.decode(response.body);
+
+      List result = data['results'];
+
+      return result.map((e) => Movie.fromJson(e)).toList();
+    } catch (e) {
+      print(">>> $e");
+    }
+  }
+
   static Future<MovieDetail> getDetails(Movie movie,
       {int movieID, http.Client client}) async {
     String url =

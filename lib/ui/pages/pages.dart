@@ -37,4 +37,4 @@ part 'profile_page.dart';
 part 'topup_page.dart';
 part 'wallet_page.dart';
 part 'edit_profile_page.dart';
-part 'explore_movie_page.dart';
+part 'browse_movie_page.dart';

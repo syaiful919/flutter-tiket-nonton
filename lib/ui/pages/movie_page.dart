@@ -141,7 +141,12 @@ class MoviePage extends StatelessWidget {
                 children: List.generate(
                     userState.user.selectedGenres.length,
                     (index) => BrowseButton(
-                        genre: userState.user.selectedGenres[index])),
+                          genre: userState.user.selectedGenres[index],
+                          onPressed: (id) {
+                            context.bloc<PageBloc>().add(GoToBrowseMoviePage(
+                                id, userState.user.selectedGenres[index]));
+                          },
+                        )),
               ),
             );
           } else {
