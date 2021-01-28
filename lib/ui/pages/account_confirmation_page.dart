@@ -111,6 +111,10 @@ class _AccountConfimationPageState extends State<AccountConfimationPage> {
                                       backgroundColor: Color(0xFFFF5C83),
                                       message: result.message,
                                     )..show(context);
+                                  } else {
+                                    context
+                                        .bloc<AuthBloc>()
+                                        .add(SignInAction(result.firebaseUser));
                                   }
                                 }))
                   ],

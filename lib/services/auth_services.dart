@@ -18,7 +18,7 @@ class AuthServices {
           selectedLanguage: selectedLanguage);
       await UserServices.updateUser(user);
 
-      return SignInSignUpResult(user: user);
+      return SignInSignUpResult(user: user, firebaseUser: result.user);
     } catch (e) {
       return SignInSignUpResult(message: e.toString().split(',')[1].trim());
     }
